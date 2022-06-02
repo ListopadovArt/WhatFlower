@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -24,6 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
+        setGradientBackground()
     }
     
     
@@ -34,14 +36,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             guard let ciImage = CIImage(image: userPickedImage) else {
                 fatalError("Could not convert to CIImage")
             }
-            let name = Manager.shared.detect(image: ciImage)
-            self.navigationItem.title = name
+            let flowerName = Manager.shared.detect(image: ciImage)
+            self.navigationItem.title = flowerName
             
-            Manager.shared.requestInformation(name: name) { (description) in
+            Manager.shared.requestInformation(name: flowerName) { (description, url) in
                 self.descriptionLabel.text = description
+                self.flowerImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+                self.flowerImageView.sd_setImage(with: URL(string: url),
+                                                 placeholderImage: UIImage(named: "no-image"))
             }
         }
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //MARK: -  Method of implement Gradient Background
+    func setGradientBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.systemGreen.cgColor, UIColor.systemTeal.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [0,1]
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
     
@@ -56,4 +73,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(imagePicker, animated: true, completion: nil)
     }
 }
-

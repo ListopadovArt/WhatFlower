@@ -42,17 +42,19 @@ final class Manager {
         return result
     }
     
-    internal func requestInformation(name: String,  complition: @escaping (String)->()){
+    internal func requestInformation(name: String,  complition: @escaping (String,String)->()){
         var description: String?
+        var flowerImageURL = ""
         let parameters : [String:String] = [
             "format" : "json",
             "action" : "query",
-            "prop" : "extracts",
+            "prop" : "extracts|pageimages",
             "exintro" : "",
             "explaintext" : "",
             "titles" : name,
             "indexpageids" : "",
             "redirects" : "1",
+            "pithumbsize" : "500"
         ]
         
         Alamofire.request(self.wikipediaURl, method: .get, parameters: parameters).responseJSON { response in
@@ -60,7 +62,8 @@ final class Manager {
                 let flowerJSON: JSON = JSON(response.result.value!)
                 let pageID = flowerJSON["query"]["pageids"][0].stringValue
                 description = flowerJSON["query"]["pages"][pageID]["extract"].stringValue
-                complition(description ?? "Description not found")
+                flowerImageURL = flowerJSON["query"]["pages"][pageID]["thumbnail"]["source"].stringValue
+                complition(description ?? "Description not found", flowerImageURL)
             }
         }
     }
