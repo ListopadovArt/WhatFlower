@@ -22,14 +22,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
     }
     
     
     //MARK: - ImagePicker Delegate Methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let userPickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             flowerImageView.image = userPickedImage
+            guard let ciImage = CIImage(image: userPickedImage) else {
+                fatalError("Could not convert to CIImage")
+            }
+            self.navigationItem.title = Manager.shared.detect(image: ciImage)
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
