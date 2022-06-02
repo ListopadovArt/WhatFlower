@@ -92,3 +92,4 @@ iOSInjectionProject/
 /.DS_Store
 /WhatFlower/.DS_Store
 /WhatFlower/Assets.xcassets/.DS_Store
+/WhatFlower/FlowerClassifier.mlmodel

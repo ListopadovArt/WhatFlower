@@ -13,6 +13,7 @@
 		AF84EE1D2848A2F70014B56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF84EE1B2848A2F70014B56D /* Main.storyboard */; };
 		AF84EE1F2848A2FC0014B56D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF84EE1E2848A2FC0014B56D /* Assets.xcassets */; };
 		AF84EE222848A2FC0014B56D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF84EE202848A2FC0014B56D /* LaunchScreen.storyboard */; };
+		AF84EE2C2848A91A0014B56D /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AF84EE2B2848A91A0014B56D /* FlowerClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AF84EE1E2848A2FC0014B56D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF84EE212848A2FC0014B56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF84EE232848A2FC0014B56D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF84EE2B2848A91A0014B56D /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				AF84EE1E2848A2FC0014B56D /* Assets.xcassets */,
 				AF84EE202848A2FC0014B56D /* LaunchScreen.storyboard */,
 				AF84EE232848A2FC0014B56D /* Info.plist */,
+				AF84EE2B2848A91A0014B56D /* FlowerClassifier.mlmodel */,
 			);
 			path = WhatFlower;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF84EE2C2848A91A0014B56D /* FlowerClassifier.mlmodel in Sources */,
 				AF84EE1A2848A2F70014B56D /* ViewController.swift in Sources */,
 				AF84EE162848A2F70014B56D /* AppDelegate.swift in Sources */,
 				AF84EE182848A2F70014B56D /* SceneDelegate.swift in Sources */,
