@@ -52,7 +52,6 @@
 				9801A060D073A253FA175EBF /* Pods-WhatFlower.debug.xcconfig */,
 				65D342A721C9D672F8BE5EA9 /* Pods-WhatFlower.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

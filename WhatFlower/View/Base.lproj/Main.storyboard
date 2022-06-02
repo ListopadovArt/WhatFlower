@@ -33,15 +33,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uel-05-b6y">
-                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <rect key="frame" x="20" y="88" width="374" height="448"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7g4-46-EsK">
+                                <rect key="frame" x="20" y="536" width="374" height="326"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uel-05-b6y" secondAttribute="bottom" id="SOa-3Z-oAG"/>
+                            <constraint firstItem="uel-05-b6y" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="JJh-k7-ILh"/>
+                            <constraint firstItem="7g4-46-EsK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Pla-RQ-U0a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7g4-46-EsK" secondAttribute="bottom" id="W0H-EX-ra3"/>
                             <constraint firstItem="uel-05-b6y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aaz-nB-IdV"/>
                             <constraint firstItem="uel-05-b6y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bsL-Th-Pf9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7g4-46-EsK" secondAttribute="trailing" constant="20" id="dEo-F5-f9F"/>
+                            <constraint firstItem="7g4-46-EsK" firstAttribute="top" secondItem="uel-05-b6y" secondAttribute="bottom" id="h8k-Ce-Aqb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uel-05-b6y" secondAttribute="trailing" constant="20" id="xPQ-be-asX"/>
                         </constraints>
                     </view>
@@ -58,6 +68,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionLabel" destination="7g4-46-EsK" id="tWh-mE-u2g"/>
                         <outlet property="flowerImageView" destination="uel-05-b6y" id="sDJ-8K-2aQ"/>
                     </connections>
                 </viewController>

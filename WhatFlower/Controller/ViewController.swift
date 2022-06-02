@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: - IBOutlets
     @IBOutlet weak var flowerImageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     
     // MARK: - Private Properties
@@ -33,7 +34,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             guard let ciImage = CIImage(image: userPickedImage) else {
                 fatalError("Could not convert to CIImage")
             }
-            self.navigationItem.title = Manager.shared.detect(image: ciImage)
+            let name = Manager.shared.detect(image: ciImage)
+            self.navigationItem.title = name
+            
+            Manager.shared.requestInformation(name: name) { (description) in
+                self.descriptionLabel.text = description
+            }
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
