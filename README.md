@@ -14,15 +14,24 @@ Used the framework:
 
 The user can choose a flower photo from the gallery or take a picture of a flower:
 
-![Screenshot_1](Documentation/Homepage.png)
-![Screenshot_2](Documentation/ChoosePhoto.png)
+<table>
+  <tr>
+    <td><img src="Documentation/Homepage.png" width=270 height=480></td>
+    <td><img src="Documentation/ChoosePhoto.png" width=270 height=480></td>
+    </tr>
+ </table>
+
 
 ---
 Search results:
 
-![Screenshot_3](Documentation/Result_1.png)
-![Screenshot_4](Documentation/Result_2.png)
-![Screenshot_5](Documentation/Result_3.png)
+<table>
+  <tr>
+    <td><img src="Documentation/Result_1.png" width=270 height=480></td>
+    <td><img src="Documentation/Result_2.png" width=270 height=480></td>
+    <td><img src="Documentation/Result_3.png" width=270 height=480></td>
+  </tr>
+ </table>
 
 ---
 
